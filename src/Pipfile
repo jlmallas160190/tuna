@@ -1,0 +1,44 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = ">=5.0,<6.0"
+# Variables de entorno
+python-dotenv = "*"
+# API REST (si usarás Django REST Framework)
+djangorestframework = "*"
+# Manejo de fechas y zonas horarias
+pytz = "*"
+django-filter = "~=21.0"
+# Base de datos
+psycopg2-binary = "*"
+# Archivos estáticos
+whitenoise = "*"
+django-environ = "*"
+gunicorn = "*"
+uritemplate = "*"
+django-cors-headers = "*"
+djangorestframework-simplejwt = "*"
+django-extensions = "*"
+pydantic = "*"
+dependency = "*"
+django-constance = '*'
+boto3 = "*"
+
+[dev-packages]
+# Herramientas para desarrollo
+black = "*"
+flake8 = "*"
+debugpy = "*"
+ipython = "*"
+
+[requires]
+python_version = "3.14"
+
+[scripts]
+start = "python manage.py runserver"
+migrate = "python manage.py migrate"
+createsuperuser = "python manage.py createsuperuser"
+shell = "python manage.py shell"
