@@ -5,16 +5,11 @@ name = "pypi"
 
 [packages]
 django = ">=5.0,<6.0"
-# Variables de entorno
 python-dotenv = "*"
-# API REST (si usarás Django REST Framework)
 djangorestframework = "*"
-# Manejo de fechas y zonas horarias
 pytz = "*"
 django-filter = "~=21.0"
-# Base de datos
 psycopg2-binary = "*"
-# Archivos estáticos
 whitenoise = "*"
 django-environ = "*"
 gunicorn = "*"
@@ -26,9 +21,9 @@ pydantic = "*"
 dependency = "*"
 django-constance = '*'
 boto3 = "*"
+pre-commit = "*"
 
 [dev-packages]
-# Herramientas para desarrollo
 black = "*"
 flake8 = "*"
 debugpy = "*"

@@ -1,32 +1,42 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+
 from core.models import Person
+
 
 class Patient(Person):
     is_delete = models.BooleanField()
-    
+
     def __str__(self):
         return f"{self.first_name}, {self.last_name}"
 
 
 class MedicalSpeciality(models.Model):
     code = models.CharField(_("Código"))
-    name = models.CharField(_("Nombre"),)
+    name = models.CharField(
+        _("Nombre"),
+    )
     description = models.TextField(_("Descripción"))
-     
+
+
 class Doctor(Person):
     medical_speciality = models.ForeignKey(MedicalSpeciality, on_delete=models.CASCADE)
     is_delete = models.BooleanField()
+
     def __str__(self):
         return f"{self.first_name}, {self.last_name}"
 
+
 class Schedule(models.Model):
-    day = models.CharField(_("Día de la semana"),)
+    day = models.CharField(
+        _("Día de la semana"),
+    )
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
     start_time = models.TimeField()
     end_time = models.TimeField(blank=True, null=True)
     duration = models.IntegerField()
     is_active = models.BooleanField()
+
 
 class Availability(models.Model):
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
@@ -35,6 +45,7 @@ class Availability(models.Model):
     end_time = models.TimeField(blank=True, null=True)
     is_available = models.BooleanField()
     reason = models.CharField(max_length=100)
+
 
 class Appointment(models.Model):
     PENDING = "PENDING"
