@@ -17,6 +17,7 @@ class MedicalSpeciality(models.Model):
         _("Nombre"),
     )
     description = models.TextField(_("Descripción"))
+    is_active = models.BooleanField()
 
 
 class Doctor(Person):

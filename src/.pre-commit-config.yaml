@@ -26,5 +26,5 @@ repos:
     rev: 7.1.0 # Use the latest stable version
     hooks:
       - id: flake8
-        exclude: ^.*/migrations/.*
+        exclude: ^.*/migrations/.*|tuna/settings/api.py
         args: [--max-line-length=120]
